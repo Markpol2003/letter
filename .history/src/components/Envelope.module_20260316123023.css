@@ -1,0 +1,163 @@
+.wrapper {
+  position: relative;
+  z-index: 2;
+  cursor: pointer;
+  width:  clamp(180px, 40vw, 300px);
+  height: clamp(126px, 28vw, 210px);
+  -webkit-tap-highlight-color: transparent;
+  outline: none;
+}
+.wrapper::before {
+  content: '';
+  position: absolute;
+  inset: -16px;
+  border-radius: 12px;
+  border: 1px solid transparent;
+  transition: all 0.4s ease;
+}
+.wrapper:hover::before,
+.wrapper:focus-visible::before {
+  border-color: rgba(255,45,120,0.4);
+  box-shadow:
+    0 0 20px rgba(255,45,120,0.3),
+    0 0 60px rgba(191,0,255,0.15),
+    inset 0 0 20px rgba(255,45,120,0.05);
+}
+.envelope {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transition: transform 0.3s ease;
+}
+.wrapper:hover .envelope,
+.wrapper:focus-visible .envelope {
+  transform: translateY(-8px) scale(1.02);
+}
+
+/* ── env body ── */
+.envBody {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(145deg, #0d0d25, #0a0a1e);
+  border: 1px solid rgba(255,45,120,0.35);
+  border-radius: 4px 4px 10px 10px;
+  overflow: hidden;
+  box-shadow:
+    0 0 30px rgba(255,45,120,0.2),
+    0 0 60px rgba(191,0,255,0.1),
+    inset 0 0 30px rgba(191,0,255,0.05);
+}
+.envBody::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(0,240,255,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,240,255,0.03) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+/* ── triangles ──
+   We can't use % in border-width for triangles,
+   so we use fixed px values with a media-query scale.       */
+.envBottom {
+  position: absolute; bottom: 0; left: 0;
+  width: 0; height: 0;
+  border-left:  150px solid #0f0f28;
+  border-right: 150px solid #0f0f28;
+  border-top:   100px solid transparent;
+  z-index: 2;
+}
+.envLeft {
+  position: absolute; top: 0; left: 0;
+  width: 0; height: 0;
+  border-top:   100px solid #12122a;
+  border-right: 150px solid transparent;
+  z-index: 2;
+}
+.envRight {
+  position: absolute; top: 0; right: 0;
+  width: 0; height: 0;
+  border-top:  100px solid #12122a;
+  border-left: 150px solid transparent;
+  z-index: 2;
+}
+
+/* ── flap ── */
+.envFlap {
+  position: absolute; top: 0;
+  width: 100%; height: 74%;
+  transform-origin: top center;
+  transition: transform 0.7s cubic-bezier(0.4,0,0.2,1);
+  z-index: 10;
+}
+.envFlap::before {
+  content: '';
+  position: absolute; top: 0; left: 0;
+  width: 0; height: 0;
+  border-left:  150px solid transparent;
+  border-right: 150px solid transparent;
+  border-top:   156px solid #0d0d22;
+  filter: drop-shadow(0 2px 8px rgba(255,45,120,0.3));
+}
+.envFlap::after {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; height: 1px;
+  background: linear-gradient(90deg,
+    transparent 5%, var(--neon-pink) 50%, transparent 95%);
+  box-shadow: 0 0 8px var(--neon-pink);
+  opacity: 0.8;
+}
+
+/* ── seal ── */
+.seal {
+  position: absolute;
+  top: 44%; left: 50%;
+  transform: translateX(-50%);
+  width:  clamp(36px, 8vw, 46px);
+  height: clamp(36px, 8vw, 46px);
+  z-index: 20;
+  display: flex; align-items: center; justify-content: center;
+  font-size: clamp(1rem, 3vw, 1.4rem);
+  transition: all 0.4s ease;
+}
+.seal::before {
+  content: '';
+  position: absolute; inset: 0;
+  border-radius: 50%;
+  background: var(--dark-bg);
+  border: 1.5px solid var(--neon-pink);
+  box-shadow: 0 0 12px var(--neon-pink), 0 0 24px rgba(255,45,120,0.3);
+  animation: sealPulse 2s ease-in-out infinite;
+}
+@keyframes sealPulse {
+  0%,100% { box-shadow:0 0 12px var(--neon-pink),0 0 24px rgba(255,45,120,0.3); }
+  50%      { box-shadow:0 0 22px var(--neon-pink),0 0 50px rgba(255,45,120,0.5); }
+}
+
+/* ── open state ── */
+.open .envFlap { transform: rotateX(180deg); }
+.open .seal    {
+  opacity: 0;
+  transform: translateX(-50%) scale(0) rotate(180deg);
+}
+
+/* ── responsive triangle scaling ── */
+@media (max-width: 680px) {
+  .envBottom { border-left-width:120px; border-right-width:120px; border-top-width:80px; }
+  .envLeft   { border-top-width:80px;   border-right-width:120px; }
+  .envRight  { border-top-width:80px;   border-left-width:120px;  }
+  .envFlap::before { border-left-width:120px; border-right-width:120px; border-top-width:125px; }
+}
+@media (max-width: 480px) {
+  .envBottom { border-left-width:105px; border-right-width:105px; border-top-width:70px; }
+  .envLeft   { border-top-width:70px;   border-right-width:105px; }
+  .envRight  { border-top-width:70px;   border-left-width:105px;  }
+  .envFlap::before { border-left-width:105px; border-right-width:105px; border-top-width:110px; }
+}
+@media (max-width: 360px) {
+  .envBottom { border-left-width:90px; border-right-width:90px; border-top-width:60px; }
+  .envLeft   { border-top-width:60px;  border-right-width:90px; }
+  .envRight  { border-top-width:60px;  border-left-width:90px;  }
+  .envFlap::before { border-left-width:90px; border-right-width:90px; border-top-width:94px; }
+}

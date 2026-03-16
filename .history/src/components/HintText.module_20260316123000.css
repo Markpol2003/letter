@@ -1,0 +1,18 @@
+.hint {
+  position: relative;
+  z-index: 2;
+  font-family: 'Share Tech Mono', monospace;
+  font-size: clamp(0.6rem, 1.8vw, 0.78rem);
+  letter-spacing: clamp(1px, 0.5vw, 3px);
+  text-transform: uppercase;
+  color: var(--neon-cyan);
+  margin-bottom: clamp(16px, 3vw, 30px);
+  text-shadow: 0 0 10px var(--neon-cyan);
+  min-height: 1.2em;
+  text-align: center;
+  padding: 0 16px;
+}
+.hint::before {
+  content: '> ';
+  color: var(--neon-pink);
+}
