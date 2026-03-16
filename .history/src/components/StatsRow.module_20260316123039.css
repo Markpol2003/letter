@@ -1,0 +1,30 @@
+.row {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-wrap: wrap;
+  gap: clamp(10px, 2.5vw, 24px);
+  margin-top: clamp(16px, 3vw, 28px);
+  justify-content: center;
+}
+.chip {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: clamp(0.55rem, 1.5vw, 0.65rem);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  display: flex; align-items: center; gap: 6px;
+}
+.dot {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  animation: blink 2s ease-in-out infinite;
+}
+.cyan   { background: var(--neon-cyan);   box-shadow: 0 0 6px var(--neon-cyan);   }
+.pink   { background: var(--neon-pink);   box-shadow: 0 0 6px var(--neon-pink);   animation-delay: 0.6s;  }
+.purple { background: var(--neon-purple); box-shadow: 0 0 6px var(--neon-purple); animation-delay: 1.2s; }
+@keyframes blink {
+  0%,100% { opacity: 1;   }
+  50%      { opacity: 0.2; }
+}
