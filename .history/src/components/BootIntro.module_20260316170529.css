@@ -1,0 +1,139 @@
+.wrap {
+  position: fixed;
+  inset: 0;
+  background: #050510;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  animation: fadeIn 0.4s ease;
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.exit {
+  animation: exitAnim 0.7s ease forwards;
+}
+@keyframes exitAnim {
+  0%   { opacity: 1; transform: scale(1);    filter: brightness(1);   }
+  40%  { opacity: 1; transform: scale(1.02); filter: brightness(2);   }
+  100% { opacity: 0; transform: scale(0.96); filter: brightness(0.2); }
+}
+
+/* ── terminal screen ── */
+.screen {
+  width: 100%;
+  max-width: 560px;
+  background: #07071a;
+  border: 1px solid rgba(0,240,255,0.25);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow:
+    0 0 0 1px rgba(0,240,255,0.08),
+    0 0 40px rgba(0,240,255,0.1),
+    0 0 80px rgba(191,0,255,0.08);
+}
+
+/* ── top bar ── */
+.topBar {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 10px 16px;
+  background: rgba(0,240,255,0.05);
+  border-bottom: 1px solid rgba(0,240,255,0.1);
+}
+.topBarDot {
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  background: rgba(0,240,255,0.25);
+  box-shadow: 0 0 6px rgba(0,240,255,0.3);
+}
+.topBarTitle {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 3px;
+  color: rgba(0,240,255,0.5);
+  margin-left: 6px;
+}
+
+/* ── lines ── */
+.lines {
+  padding: clamp(14px, 3vw, 24px);
+  min-height: clamp(160px, 30vh, 260px);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.line {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  animation: lineIn 0.2s ease forwards;
+}
+@keyframes lineIn {
+  from { opacity: 0; transform: translateX(-8px); }
+  to   { opacity: 1; transform: translateX(0);    }
+}
+.prompt {
+  color: var(--neon-pink);
+  font-family: 'Share Tech Mono', monospace;
+  font-size: clamp(0.7rem, 2vw, 0.82rem);
+  text-shadow: 0 0 6px var(--neon-pink);
+  flex-shrink: 0;
+}
+.lineText {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: clamp(0.68rem, 2vw, 0.8rem);
+  color: rgba(0,240,255,0.85);
+  text-shadow: 0 0 4px rgba(0,240,255,0.3);
+  letter-spacing: 0.5px;
+}
+.caret {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: clamp(0.68rem, 2vw, 0.8rem);
+  color: var(--neon-cyan);
+  animation: caretBlink 0.7s steps(1) infinite;
+}
+@keyframes caretBlink {
+  0%,100% { opacity: 1; }
+  50%      { opacity: 0; }
+}
+
+/* ── progress bar ── */
+.barWrap {
+  padding: 12px clamp(14px, 3vw, 24px) 20px;
+  border-top: 1px solid rgba(0,240,255,0.08);
+}
+.barLabel {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: clamp(0.58rem, 1.5vw, 0.65rem);
+  color: var(--neon-purple);
+  text-shadow: 0 0 6px var(--neon-purple);
+  letter-spacing: 2px;
+  margin-bottom: 8px;
+}
+.barTrack {
+  width: 100%;
+  height: 6px;
+  background: rgba(0,240,255,0.08);
+  border-radius: 999px;
+  border: 1px solid rgba(0,240,255,0.15);
+  overflow: hidden;
+}
+.barFill {
+  height: 100%;
+  border-radius: 999px;
+  background: linear-gradient(90deg,
+    var(--neon-purple), var(--neon-pink), var(--neon-cyan));
+  box-shadow: 0 0 10px var(--neon-pink);
+  transition: width 0.28s ease;
+}
+
+/* ── responsive ── */
+@media (max-width: 400px) {
+  .lines { gap: 6px; min-height: 140px; }
+}

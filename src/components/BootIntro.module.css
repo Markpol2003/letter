@@ -1,0 +1,71 @@
+.wrap {
+  position: fixed;
+  inset: 0;
+  background: #050510;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 0.5s ease;
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.exit {
+  animation: fadeOut 0.8s ease forwards;
+}
+@keyframes fadeOut {
+  0%   { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+/* ── terminal box ── */
+.box {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 0 20px;
+}
+
+/* ── solved lines (already typed) ── */
+.solvedLine {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: 'Share Tech Mono', monospace;
+  font-size: clamp(0.75rem, 2.5vw, 1rem);
+  color: rgba(0, 240, 255, 0.45);
+  letter-spacing: 2px;
+}
+
+/* ── active typing line ── */
+.activeLine {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: 'Share Tech Mono', monospace;
+  font-size: clamp(0.75rem, 2.5vw, 1rem);
+  color: var(--neon-cyan);
+  text-shadow: 0 0 10px var(--neon-cyan);
+  letter-spacing: 2px;
+}
+
+/* ── prompt symbol ── */
+.prompt {
+  color: var(--neon-pink);
+  text-shadow: 0 0 8px var(--neon-pink);
+  flex-shrink: 0;
+}
+
+/* ── blinking cursor ── */
+.caret {
+  color: var(--neon-cyan);
+  animation: blink 0.7s steps(1) infinite;
+  margin-left: 2px;
+}
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}

@@ -1,0 +1,166 @@
+
+.wrap {
+  position: fixed;
+  inset: 0;
+  background: rgba(2,2,14,0.96);
+  z-index: 9998;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  animation: fadeIn 0.3s ease;
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+.exit {
+  animation: exitGlitch 0.6s ease forwards;
+}
+@keyframes exitGlitch {
+  0%  { opacity:1; transform:scale(1)    skewX(0deg);  filter:brightness(1);   }
+  20% { opacity:1; transform:scale(1.01) skewX(-2deg); filter:brightness(2) hue-rotate(90deg); }
+  40% { opacity:1; transform:scale(0.99) skewX(2deg);  filter:brightness(1.5); }
+  100%{ opacity:0; transform:scale(1.04) skewX(0deg);  filter:brightness(0);   }
+}
+
+/* scanlines */
+.scanlines {
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0,0,0,0.18) 2px,
+    rgba(0,0,0,0.18) 4px
+  );
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* ── box ── */
+.box {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 480px;
+  text-align: center;
+  padding: clamp(24px, 5vw, 40px);
+}
+
+/* ── glitch text ── */
+.glitchText {
+  font-family: 'Orbitron', sans-serif;
+  font-size: clamp(0.85rem, 4vw, 1.4rem);
+  font-weight: 900;
+  letter-spacing: clamp(2px, 1vw, 5px);
+  color: var(--neon-cyan);
+  text-shadow:
+    0 0 10px var(--neon-cyan),
+    0 0 30px rgba(0,240,255,0.4);
+  margin-bottom: 32px;
+  position: relative;
+  animation: glitchAnim 0.15s steps(1) infinite;
+}
+.glitchText::before,
+.glitchText::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  overflow: hidden;
+}
+.glitchText::before {
+  color: var(--neon-pink);
+  clip-path: polygon(0 20%, 100% 20%, 100% 40%, 0 40%);
+  animation: glitchB 0.3s steps(1) infinite;
+  text-shadow: 2px 0 var(--neon-pink);
+}
+.glitchText::after {
+  color: var(--neon-purple);
+  clip-path: polygon(0 60%, 100% 60%, 100% 80%, 0 80%);
+  animation: glitchC 0.4s steps(1) infinite;
+  text-shadow: -2px 0 var(--neon-purple);
+}
+@keyframes glitchAnim {
+  0%,100% { transform: translate(0,0);   }
+  25%      { transform: translate(-1px,0); }
+  75%      { transform: translate(1px,0);  }
+}
+@keyframes glitchB {
+  0%,100% { transform: translate(0,0);    opacity:0.6; }
+  33%      { transform: translate(-2px,0); opacity:0.8; }
+  66%      { transform: translate(2px,0);  opacity:0.4; }
+}
+@keyframes glitchC {
+  0%,100% { transform: translate(0,0);    opacity:0.5; }
+  50%      { transform: translate(1px,1px); opacity:0.7; }
+}
+
+/* ── progress ── */
+.pctText {
+  font-family: 'Orbitron', sans-serif;
+  font-size: clamp(1.8rem, 8vw, 3rem);
+  font-weight: 900;
+  background: linear-gradient(90deg, var(--neon-pink), var(--neon-purple), var(--neon-cyan));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  filter: drop-shadow(0 0 12px rgba(255,45,120,0.5));
+  margin-bottom: 16px;
+}
+.barTrack {
+  position: relative;
+  width: 100%;
+  height: 8px;
+  background: rgba(0,240,255,0.08);
+  border-radius: 999px;
+  border: 1px solid rgba(0,240,255,0.2);
+  overflow: visible;
+  margin-bottom: 20px;
+}
+.barFill {
+  height: 100%;
+  border-radius: 999px;
+  background: linear-gradient(90deg,
+    var(--neon-purple), var(--neon-pink), var(--neon-cyan));
+  box-shadow: 0 0 12px var(--neon-pink);
+  transition: width 0.04s linear;
+}
+.barHead {
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 14px; height: 14px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow:
+    0 0 8px  var(--neon-cyan),
+    0 0 20px var(--neon-pink);
+  transition: left 0.04s linear;
+}
+
+/* ── status ── */
+.status {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: clamp(0.62rem, 2vw, 0.75rem);
+  color: var(--neon-purple);
+  text-shadow: 0 0 8px var(--neon-purple);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  min-height: 1.4em;
+}
+
+/* ── hex noise ── */
+.hexNoise {
+  margin-top: 24px;
+  font-family: 'Share Tech Mono', monospace;
+  font-size: clamp(0.48rem, 1.2vw, 0.58rem);
+  color: rgba(0,240,255,0.12);
+  letter-spacing: 3px;
+  line-height: 1.8;
+  word-break: break-all;
+  text-align: center;
+  pointer-events: none;
+  user-select: none;
+}

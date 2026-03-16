@@ -1,20 +1,24 @@
 import { useState, useCallback } from 'react';
-import Background     from './components/Background';
-import Particles      from './components/Particles';
-import HintText       from './components/HintText';
-import Envelope       from './components/Envelope';
-import StatsRow       from './components/StatsRow';
-import LetterOverlay  from './components/LetterOverlay';
-import CursorEffect   from './components/CursorEffect';
-import BootIntro      from './components/BootIntro';
+import Background    from './components/Background';
+import Particles     from './components/Particles';
+import HintText      from './components/HintText';
+import Envelope      from './components/Envelope';
+import StatsRow      from './components/StatsRow';
+import LetterOverlay from './components/LetterOverlay';
+import CursorEffect  from './components/CursorEffect';
+import BootIntro     from './components/BootIntro';
 import DecryptOverlay from './components/DecryptOverlay';
-import styles         from './App.module.css';
+import Confetti      from './components/Confetti';
+import styles        from './App.module.css';
 
-/* stages: 'boot' → 'main' → 'decrypt' → 'letter' */
+/* app has 4 stages:
+   boot → main → decrypt → letter             */
+type Stage = 'boot' | 'main' | 'decrypt' | 'letter';
 
 export default function App() {
-  const [stage,        setStage]        = useState('boot');
+  const [stage,       setStage]       = useState('boot');
   const [envelopeOpen, setEnvelopeOpen] = useState(false);
+  const [confetti,    setConfetti]    = useState(false);
 
   /* boot done → show main screen */
   const handleBootDone = useCallback(() => setStage('main'), []);
@@ -26,9 +30,12 @@ export default function App() {
     setStage('decrypt');
   }, [stage]);
 
-  /* decrypt done → show letter */
+  /* decrypt done → show letter + confetti */
   const handleDecryptDone = useCallback(() => {
     setStage('letter');
+    setConfetti(true);
+    /* stop confetti after 4s */
+    setTimeout(() => setConfetti(false), 4000);
   }, []);
 
   /* close letter → back to main */
@@ -41,16 +48,15 @@ export default function App() {
     <div className={styles.app}>
       <CursorEffect />
 
-      {/* always mounted */}
-      <Background />
-      <Particles />
-
-      {/* boot intro */}
+      {/* ── boot intro ── */}
       {stage === 'boot' && (
         <BootIntro onDone={handleBootDone} />
       )}
 
-      {/* main scene */}
+      {/* ── main scene (always mounted so particles/bg stay) ── */}
+      <Background />
+      <Particles />
+
       {(stage === 'main' || stage === 'decrypt' || stage === 'letter') && (
         <>
           <HintText />
@@ -62,15 +68,18 @@ export default function App() {
         </>
       )}
 
-      {/* decrypt overlay */}
+      {/* ── decrypt overlay ── */}
       {stage === 'decrypt' && (
         <DecryptOverlay onDone={handleDecryptDone} />
       )}
 
-      {/* letter */}
+      {/* ── letter ── */}
       {stage === 'letter' && (
         <LetterOverlay onClose={handleClose} />
       )}
+
+      {/* ── confetti ── */}
+      <Confetti active={confetti} />
     </div>
   );
 }

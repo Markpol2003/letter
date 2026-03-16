@@ -15,6 +15,7 @@ import styles         from './App.module.css';
 export default function App() {
   const [stage,        setStage]        = useState('boot');
   const [envelopeOpen, setEnvelopeOpen] = useState(false);
+  const [confetti,     setConfetti]     = useState(false);
 
   /* boot done → show main screen */
   const handleBootDone = useCallback(() => setStage('main'), []);
@@ -26,9 +27,11 @@ export default function App() {
     setStage('decrypt');
   }, [stage]);
 
-  /* decrypt done → show letter */
+  /* decrypt done → show letter + confetti */
   const handleDecryptDone = useCallback(() => {
     setStage('letter');
+    setConfetti(true);
+    setTimeout(() => setConfetti(false), 4000);
   }, []);
 
   /* close letter → back to main */
