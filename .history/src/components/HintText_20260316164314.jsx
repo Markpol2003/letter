@@ -31,4 +31,4 @@ export default function HintText() {
       {text}
     </p>
   );
-}
+}gi
