@@ -8,3 +8,107 @@
   position: relative;
   overflow: hidden;
 }
+
+/* ── Lock Screen ── */
+.lockScreen {
+  position: relative;
+  z-index: 50;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+  animation: lockFadeIn 1s ease;
+}
+@keyframes lockFadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.lockIcon {
+  font-size: clamp(3rem, 8vw, 5rem);
+  margin-bottom: 1rem;
+  animation: lockPulse 2.5s ease-in-out infinite;
+  filter: drop-shadow(0 0 20px rgba(255, 45, 120, 0.6));
+}
+@keyframes lockPulse {
+  0%, 100% { transform: scale(1); }
+  50%      { transform: scale(1.1); }
+}
+
+.lockTitle {
+  font-family: 'Orbitron', sans-serif;
+  font-size: clamp(1.2rem, 4vw, 2rem);
+  font-weight: 900;
+  letter-spacing: clamp(4px, 1.5vw, 8px);
+  background: linear-gradient(90deg, var(--neon-pink), var(--neon-purple), var(--neon-cyan));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  filter: drop-shadow(0 0 12px rgba(255, 45, 120, 0.5));
+  margin: 0 0 0.75rem;
+}
+
+.lockSub {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: clamp(0.7rem, 2vw, 0.85rem);
+  color: var(--text-muted);
+  letter-spacing: 2px;
+  margin: 0 0 0.25rem;
+}
+
+.lockDate {
+  font-family: 'Orbitron', sans-serif;
+  font-size: clamp(0.9rem, 3vw, 1.3rem);
+  font-weight: 700;
+  color: var(--neon-cyan);
+  text-shadow: 0 0 10px rgba(0, 240, 255, 0.4);
+  letter-spacing: 3px;
+  margin-bottom: 1.5rem;
+}
+
+.countdown {
+  display: flex;
+  gap: clamp(10px, 3vw, 24px);
+  margin-bottom: 1.5rem;
+}
+
+.countUnit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: clamp(8px, 2vw, 14px) clamp(10px, 2.5vw, 18px);
+  border: 1px solid rgba(255, 45, 120, 0.25);
+  border-radius: 10px;
+  background: rgba(255, 45, 120, 0.04);
+  min-width: clamp(48px, 10vw, 70px);
+}
+
+.countVal {
+  font-family: 'Orbitron', sans-serif;
+  font-size: clamp(1.2rem, 4vw, 1.8rem);
+  font-weight: 900;
+  background: linear-gradient(135deg, var(--neon-pink), var(--neon-purple));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1;
+}
+
+.countLabel {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: clamp(0.5rem, 1.3vw, 0.6rem);
+  color: var(--text-muted);
+  letter-spacing: 2px;
+  margin-top: 4px;
+}
+
+.lockHint {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: clamp(0.6rem, 1.6vw, 0.75rem);
+  color: var(--neon-purple);
+  text-shadow: 0 0 6px var(--neon-purple);
+  letter-spacing: 1px;
+  margin: 0;
+}

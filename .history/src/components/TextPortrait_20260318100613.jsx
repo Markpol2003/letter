@@ -3,9 +3,6 @@ import styles from './TextPortrait.module.css';
 
 // characters used to draw the portrait
 const CHARS = 'LOVEYOUFOREVER♥01'.split('');
-const PORTRAIT_BG = 'rgba(4, 6, 16, 0.94)';
-const PORTRAIT_PINK = '255,45,130';
-const PORTRAIT_GLOW = 'rgba(255,45,120,0.55)';
 
 function getFontSize() {
   const w = window.innerWidth;
@@ -152,17 +149,8 @@ export default function TextPortrait({ imageSrc }) {
 
         const ctx = canvas.getContext('2d');
         ctx.clearRect(0, 0, W, H);
-        ctx.shadowColor = 'transparent';
-        ctx.shadowBlur = 0;
-        ctx.fillStyle = PORTRAIT_BG;
-        ctx.fillRect(0, 0, W, H);
         ctx.font = `700 ${FS}px "Share Tech Mono", monospace`;
         ctx.textBaseline = 'top';
-
-        ctx.shadowColor = PORTRAIT_GLOW;
-        ctx.shadowBlur = 12;
-        ctx.shadowOffsetX = 0;
-        ctx.shadowOffsetY = 0;
 
         const frame = frameRef.current;
 
@@ -177,10 +165,10 @@ export default function TextPortrait({ imageSrc }) {
             const ci = (colOffset[col] + Math.floor(frame / 4) + row) % CHARS.length;
 
             // brighter pixels -> more visible characters
-            const alpha = Math.min(1, Math.max(0.28, brightness * 1.25));
+            const alpha = Math.min(1, Math.max(0.12, brightness * 1.15));
 
             // neon-ish tint
-            ctx.fillStyle = `rgba(${PORTRAIT_PINK},${alpha})`;
+            ctx.fillStyle = `rgba(255,45,120,${alpha})`;
             ctx.fillText(CHARS[ci], col * FS, row * FS);
           }
         }

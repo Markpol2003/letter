@@ -6,6 +6,8 @@
   display: block;
   z-index: 0;
 
-  /* increase visibility */
-  opacity: 0.75;
+  background: radial-gradient(circle at 50% 28%, rgba(255,45,140,0.16), rgba(4,5,12,0.92) 65%), #03030d;
+  box-shadow: inset 0 0 60px rgba(0, 0, 0, 0.92), 0 0 42px rgba(255, 45, 120, 0.25);
+  border-radius: inherit;
+  opacity: 1;
 }
