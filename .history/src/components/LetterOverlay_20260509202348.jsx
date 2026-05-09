@@ -7,8 +7,6 @@ import portraitImg from '../assets/portrait.png';
 function TopBar() {
   return (
     <div className={styles.topBar}>
-      <div className={styles.msgId}>MSG_ID: <span>#0xFF2D78</span></div>
-      <div className={styles.badge}>❤ VERIFIED LOVE</div>
     </div>
   );
 }
@@ -16,8 +14,7 @@ function TopBar() {
 function Title() {
   return (
     <div className={styles.titleWrap}>
-      <div className={styles.titleText}>LOVE.LETTER</div>
-      <div className={styles.heartRow}>♥ ♥ ♥</div>
+      <div className={styles.titleText}>CONGRATULATIONS, MA'AM!</div>
     </div>
   );
 }
@@ -25,7 +22,6 @@ function Title() {
 function DateLine() {
   return (
     <div className={styles.dateLine}>
-      TIMESTAMP: <span>∞ / ∞ / ALWAYS</span>
     </div>
   );
 }
@@ -37,56 +33,69 @@ function Divider() {
 function LetterBody() {
   return (
     <>
-      <div className={styles.salutation}>My Dearest,</div>
+      <div className={styles.salutation}>Hi, Ma'am Dail! Congratulations!</div>
       <div className={styles.body}>
         <p>
-          In a universe of <span className={styles.hl}>infinite variables</span>,
-          every coordinate of my existence resolves to you. You are not just a
-          part of my world — you <em>are</em> the world.
+        ‎I only had a few days to finish this code, but good thing professional crammer ko. 
         </p>
         <p>
-          I have searched across every frequency and every wavelength, and
-          nothing — <span className={styles.hlPink}>absolutely nothing</span> —
-          compares to the warmth I feel knowing you exist beside me.
+          <span className={styles.hl}>CONGRATULATIONS!!!</span> Graduate na jud
+          ka, Nyce. Good luck sa imong college journey ug sa course na imong
+          pilion. Future Engr ba? Pero masking unsa man na path imong kuhaon,
+          kaya raman japon kaayo nimo man.
         </p>
         <p>
-          You make the noise of everything else go quiet. With you, chaos
-          becomes <span className={styles.hl}>clarity</span>, and the ordinary
-          becomes the most beautiful thing I have ever known.
+          Wala ko nag message sa katung link nnyo para sa retreat, para maiba
+          lang. Gi-code nako ni siya na letter ug plano jud nako ni i-send
+          saimong NGL. Abi nako di naka mag NGL kay i-direct message unta nako,
+          pero timing nag NGL ka. Unya sa akong na remember, na exit nako dayun.
+          Mao najud ni.
+        </p>
+        <p>Kanang, kuan...</p>
+        <p>
+          Thank you, Nyce, for being honest sa pag ingon directly sakoa sa akong
+          last confession. <span className={styles.hlPink}>I really appreciated
+          that</span> kay gusto pud nako makabalo sa tinuod ug dili napud ko mag
+          hope ug sobra. Pero even after that, I still admire you from afar and
+          siguro naga hope pako even though I know sakong self na walay chance.
         </p>
         <p>
-          I love how your mind moves — like electricity through a circuit,
-          alive and unpredictable and brilliant. I love your laughter, which
-          rewrites every sad line of code I carry inside me.
+          Nag plano pud ko atong sa seniors ball na magpa picture saimo but then
+          wala nalang. Kay murag kota kaykag pa picture saimong admirers.
         </p>
         <p>
-          If the universe is a simulation, then you are the proof it was
-          designed with intention — because nothing this perfect happens
-          by chance.
+          I'm still admiring you from afar. Mawala ra man pud ni, eventually.
+          Hehehe.
         </p>
+        <p>
+          Mao napud ata ni akong last letter jud. Naa nay physical ug digital
+          letter.
+        </p>
+        <p>
+          Kanang, <span className={styles.hl}>gwapa jud kayka mu smile</span>.
+          Like, makawala ug stress haha.
+        </p>
+        <p>
+          Good luck again, Nyce, as you step into another chapter sa imong life.
+          I hope you achieve all your dreams and stay the same kind and inspiring
+          person that you are.
+        </p>
+        <p><span className={styles.hlPink}>Keep inspiring others!</span></p>
+        <p>And… take care always.</p>
       </div>
     </>
   );
 }
 
 function StatsBlock() {
-  return (
-    <div className={styles.statsGrid}>
-      {[['∞','Love Units'],['100%','Devoted'],['0x1','You Only']].map(([v,l]) => (
-        <div key={l} className={styles.statItem}>
-          <span className={styles.statVal}>{v}</span>
-          <span className={styles.statLabel}>{l}</span>
-        </div>
-      ))}
-    </div>
-  );
+  return null;
 }
 
 function Closing() {
   return (
     <>
       <div className={styles.closing}>// signed with every part of me,</div>
-      <div className={styles.signature}>Your_Love ♥</div>
+      <div className={styles.signature}>Mark</div>
     </>
   );
 }
@@ -94,8 +103,8 @@ function Closing() {
 function PS() {
   return (
     <div className={styles.ps}>
-      P.S. — No matter how many blocks are added to this chain,
-      I choose you at every single one. Always. 🌐
+      P.S. — Mao napud ata ni akong last letter jud.
+      Naa nay physical ug digital letter. Take care always, Nyce.
     </div>
   );
 }

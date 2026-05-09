@@ -7,8 +7,6 @@ import portraitImg from '../assets/portrait.png';
 function TopBar() {
   return (
     <div className={styles.topBar}>
-      <div className={styles.msgId}>MSG_ID: <span>#0xFF2D78</span></div>
-      <div className={styles.badge}>❤ VERIFIED LOVE</div>
     </div>
   );
 }
@@ -16,8 +14,7 @@ function TopBar() {
 function Title() {
   return (
     <div className={styles.titleWrap}>
-      <div className={styles.titleText}>LOVE.LETTER</div>
-      <div className={styles.heartRow}>♥ ♥ ♥</div>
+      <div className={styles.titleText}>CONGRATULATIONS, MA'AM!</div>
     </div>
   );
 }
@@ -25,7 +22,6 @@ function Title() {
 function DateLine() {
   return (
     <div className={styles.dateLine}>
-      TIMESTAMP: <span>∞ / ∞ / ALWAYS</span>
     </div>
   );
 }
@@ -37,32 +33,35 @@ function Divider() {
 function LetterBody() {
   return (
     <>
-      <div className={styles.salutation}>My Dearest,</div>
+      <div className={styles.salutation}>Hi, Ma'am Dail! Congratulations!</div>
       <div className={styles.body}>
         <p>
-          In a universe of <span className={styles.hl}>infinite variables</span>,
-          every coordinate of my existence resolves to you. You are not just a
-          part of my world — you <em>are</em> the world.
+          I only had a few days to finish this code, but good thing professional
+          crammer ko.
         </p>
         <p>
-          I have searched across every frequency and every wavelength, and
-          nothing — <span className={styles.hlPink}>absolutely nothing</span> —
-          compares to the warmth I feel knowing you exist beside me.
+          I just want to say that I really admire you, even from afar. Malipay
+          jud ko every time mag sugat ta. Your smile is one of the things I really
+          like about you. Every time makita tika, especially every graduation
+          practice, sa taas, my heart feels happy.
         </p>
         <p>
-          You make the noise of everything else go quiet. With you, chaos
-          becomes <span className={styles.hl}>clarity</span>, and the ordinary
-          becomes the most beautiful thing I have ever known.
+          There's something peaceful and inspiring about your presence. Bisan
+          simple ra nga moments, makahimo jud kag impact without even realizing
+          it.
         </p>
         <p>
-          I love how your mind moves — like electricity through a circuit,
-          alive and unpredictable and brilliant. I love your laughter, which
-          rewrites every sad line of code I carry inside me.
+          If hatagan kog chance ni Lord nga mas makaila pa ka nako, dili jud nako
+          sayangon. For now, I'll continue admiring you quietly and hoping nga
+          someday maka-interact ta more.
         </p>
         <p>
-          If the universe is a simulation, then you are the proof it was
-          designed with intention — because nothing this perfect happens
-          by chance.
+          I'm always rooting for you — for your dreams, plans, and future
+          success. Deserve nimo tanan good things nga moabot sa imong life.
+        </p>
+        <p>
+          God bless you always, Ma'am Dail. Congratulations again, and take care
+          always! 🤍
         </p>
       </div>
     </>
@@ -70,23 +69,14 @@ function LetterBody() {
 }
 
 function StatsBlock() {
-  return (
-    <div className={styles.statsGrid}>
-      {[['∞','Love Units'],['100%','Devoted'],['0x1','You Only']].map(([v,l]) => (
-        <div key={l} className={styles.statItem}>
-          <span className={styles.statVal}>{v}</span>
-          <span className={styles.statLabel}>{l}</span>
-        </div>
-      ))}
-    </div>
-  );
+  return null;
 }
 
 function Closing() {
   return (
     <>
       <div className={styles.closing}>// signed with every part of me,</div>
-      <div className={styles.signature}>Your_Love ♥</div>
+      <div className={styles.signature}>Mark</div>
     </>
   );
 }
@@ -94,8 +84,8 @@ function Closing() {
 function PS() {
   return (
     <div className={styles.ps}>
-      P.S. — No matter how many blocks are added to this chain,
-      I choose you at every single one. Always. 🌐
+      P.S. — Gi-code gihapon ni kay gusto nako something personal para nimo,
+      Ma'am. Always cheering for you.
     </div>
   );
 }
@@ -123,7 +113,7 @@ export default function LetterOverlay({ onClose }) {
     <div className={styles.overlay} ref={overlayRef} onClick={handleBackdrop}>
       <div className={styles.letter}>
 
-        <TextPortrait />
+        <TextPortrait imageSrc={portraitImg} />
         <div className={styles.topBorder} />
 
         <span className={`${styles.corner} ${styles.tl}`} />
@@ -131,7 +121,7 @@ export default function LetterOverlay({ onClose }) {
         <span className={`${styles.corner} ${styles.bl}`} />
         <span className={`${styles.corner} ${styles.br}`} />
 
-        <button className={styles.closeBtn} onClick={onClose}>[ ESC ]</button>
+        <button className={styles.closeBtn} onClick={onClose}>[ Back ]</button>
 
         <div className={styles.content}>
           <TopBar />

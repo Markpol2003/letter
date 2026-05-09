@@ -14,7 +14,7 @@ function TopBar() {
 function Title() {
   return (
     <div className={styles.titleWrap}>
-      <div className={styles.titleText}>CONGRATULATIONS, NYCE!</div>
+      <div className={styles.titleText}>CONGRATULATIONS, MA'AM!</div>
     </div>
   );
 }
@@ -33,56 +33,36 @@ function Divider() {
 function LetterBody() {
   return (
     <>
-      <div className={styles.salutation}>Hi Nyce!</div>
+      <div className={styles.salutation}>Hi, Ma'am Dail! Congratulations!</div>
       <div className={styles.body}>
         <p>
-          Unta mabasa ni nimo kay murag feel nako wala na submit akong message
-          sa NGL, na exit ata nako dayun.
+          I only had a few days to finish this code, but good thing professional
+          crammer ko.
         </p>
         <p>
-          <span className={styles.hl}>CONGRATULATIONS!!!</span> Graduate na jud
-          ka, Nyce. Good luck sa imong college journey ug sa course na imong
-          pilion. Future Engr ba? Pero masking unsa man na path imong kuhaon,
-          kaya raman japon kaayo nimo man.
+          I just want to say that I really admire you, even from afar. Malipay
+          jud ko every time mag sugat ta. Your smile is one of the things I really
+          like about you. Every time makita tika, especially every graduation
+          practice, sa taas, my heart feels happy.
         </p>
         <p>
-          Wala ko nag message sa katung link nnyo para sa retreat, para maiba
-          lang. Gi-code nako ni siya na letter ug plano jud nako ni i-send
-          saimong NGL. Abi nako di naka mag NGL kay i-direct message unta nako,
-          pero timing nag NGL ka. Unya sa akong na remember, na exit nako dayun.
-          Mao najud ni.
-        </p>
-        <p>Kanang, kuan...</p>
-        <p>
-          Thank you, Nyce, for being honest sa pag ingon directly sakoa sa akong
-          last confession. <span className={styles.hlPink}>I really appreciated
-          that</span> kay gusto pud nako makabalo sa tinuod ug dili napud ko mag
-          hope ug sobra. Pero even after that, I still admire you from afar and
-          siguro naga hope pako even though I know sakong self na walay chance.
+          There's something peaceful and inspiring about your presence. Bisan
+          simple ra nga moments, makahimo jud kag impact without even realizing
+          it.
         </p>
         <p>
-          Nag plano pud ko atong sa seniors ball na magpa picture saimo but then
-          wala nalang. Kay murag kota kaykag pa picture saimong admirers.
+          If hatagan kog chance ni Lord nga mas makaila pa ka nako, dili jud nako
+          sayangon. For now, I'll continue admiring you quietly and hoping nga
+          someday maka-interact ta more.
         </p>
         <p>
-          I'm still admiring you from afar. Mawala ra man pud ni, eventually.
-          Hehehe.
+          I'm always rooting for you — for your dreams, plans, and future
+          success. Deserve nimo tanan good things nga moabot sa imong life.
         </p>
         <p>
-          Mao napud ata ni akong last letter jud. Naa nay physical ug digital
-          letter.
+          God bless you always, Ma'am Dail. Congratulations again, and take care
+          always! 🤍
         </p>
-        <p>
-          Kanang, <span className={styles.hl}>gwapa jud kayka mu smile</span>.
-          Like, makawala ug stress haha.
-        </p>
-        <p>
-          Good luck again, Nyce, as you step into another chapter sa imong life.
-          I hope you achieve all your dreams and stay the same kind and inspiring
-          person that you are.
-        </p>
-        <p><span className={styles.hlPink}>Keep inspiring others!</span></p>
-        <p>And… take care always.</p>
       </div>
     </>
   );
@@ -104,8 +84,8 @@ function Closing() {
 function PS() {
   return (
     <div className={styles.ps}>
-      P.S. — Mao napud ata ni akong last letter jud.
-      Naa nay physical ug digital letter. Take care always, Nyce.
+      P.S. — Gi-code gihapon ni kay gusto nako something personal para nimo,
+      Ma'am. Always cheering for you.
     </div>
   );
 }
