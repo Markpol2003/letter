@@ -81,6 +81,15 @@ function Closing() {
   );
 }
 
+function PS() {
+  return (
+    <div className={styles.ps}>
+      P.S. — Gi-code gihapon ni kay gusto nako something personal para nimo,
+      Ma'am. Always cheering for you.
+    </div>
+  );
+}
+
 /* ══════════════════════════════════════════
    MAIN OVERLAY
 ══════════════════════════════════════════ */
@@ -122,6 +131,7 @@ export default function LetterOverlay({ onClose }) {
           <LetterBody />
           <StatsBlock />
           <Closing />
+          <PS />
         </div>
 
       </div>

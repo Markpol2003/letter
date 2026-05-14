@@ -81,6 +81,12 @@ function Closing() {
   );
 }
 
+function PS() {
+  return (
+   
+  );
+}
+
 /* ══════════════════════════════════════════
    MAIN OVERLAY
 ══════════════════════════════════════════ */
@@ -122,6 +128,7 @@ export default function LetterOverlay({ onClose }) {
           <LetterBody />
           <StatsBlock />
           <Closing />
+          <PS />
         </div>
 
       </div>
