@@ -51,7 +51,8 @@ function LetterBody() {
         For now, I’ll continue admiring you quietly and hoping nga someday maka-interact ta more.
         </p>
         <p>
-        I’m always rooting for you — for your dreams, plans, and future success. Deserve nimo tanan nga good things nga moabot sa imong life.
+          I'm always rooting for you — for your dreams, plans, and future
+          success. Deserve nimo tanan good things nga moabot sa imong life.
         </p>
         <p>
           God bless you always, Ma'am Dail. Congratulations again, and take care

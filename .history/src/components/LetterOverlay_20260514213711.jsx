@@ -42,16 +42,23 @@ function LetterBody() {
         I just want to say that I really admire you, even from afar. Malipay jud ko every time magkasugat ta. Your smile is honestly one of the things I like most about you. Every time makita tika — especially during graduation practice sa taas — my heart feels so happy.
         </p>
         <p>
-        Sayang lang kay I had plans unta nga magpapicture sa imo during graduation, but anyways…
+          There's something peaceful and inspiring about your presence. Bisan
+          simple ra nga moments, makahimo jud kag impact without even realizing
+          it.
         </p>
         <p>
-        There’s something peaceful and inspiring about your presence. Bisan simple ra nga moments, makahimo jud kag impact without even realizing it. Don’t worry, if ever mabasa man nimo ni, I don’t expect anything. I just wanted my congratulations message for you to be a little unique and sincere.
+          There's something peaceful and inspiring about your presence. Bisan
+          simple ra nga moments, makahimo jud kag impact without even realizing
+          it.
         </p>
         <p>
-        For now, I’ll continue admiring you quietly and hoping nga someday maka-interact ta more.
+          If hatagan kog chance ni Lord nga mas makaila pa ka nako, dili jud nako
+          sayangon. For now, I'll continue admiring you quietly and hoping nga
+          someday maka-interact ta more.
         </p>
         <p>
-        I’m always rooting for you — for your dreams, plans, and future success. Deserve nimo tanan nga good things nga moabot sa imong life.
+          I'm always rooting for you — for your dreams, plans, and future
+          success. Deserve nimo tanan good things nga moabot sa imong life.
         </p>
         <p>
           God bless you always, Ma'am Dail. Congratulations again, and take care
